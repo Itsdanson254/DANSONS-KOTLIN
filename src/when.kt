@@ -14,5 +14,5 @@ fun main() {
            5 -> "Friday"
            else -> "Invalid day of the week"
     }
-    println("The day is $ result")
+    println("The day is $result")
 }
