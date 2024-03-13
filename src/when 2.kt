@@ -1,22 +1,25 @@
 import java.util.Scanner
 fun main() {
-    println("Enter marks: ")
-    val marks = readLine()?.toIntOrNull()
+    println("Welcome to the Student Grade Calculator")
+    println("Please enter the student's name:")
+    val name = readLine()!!.toString()
 
-    if (marks != null) {
-        val grade = calculateGrade(marks)
-        println("Grade: $grade")
-    } else {
-        println("Invalid input. Please enter a valid number.")
-    }
+    println("Please enter the student's marks:")
+    val marks = readLine()!!.toInt()
+
+    val grade = calculateGrade(marks)
+    println("Student Name: $name")
+    println("Marks Obtained: $marks")
+    println("Grade: $grade")
 }
 
 fun calculateGrade(marks: Int): String {
-    return when (marks) {
-        in 80..100 -> "A"
-        in 70 until 80 -> "B"
-        in 60 until 70 -> "C"
-        in 50 until 60 -> "D"
+    return when {
+        marks >= 90 -> "A"
+        marks >= 80 -> "B"
+        marks >= 70 -> "C"
+        marks >= 60 -> "D"
         else -> "E"
     }
 }
+
